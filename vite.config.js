@@ -4,6 +4,6 @@ import vue from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
 
 export default defineConfig(({ mode }) => ({
-  base: '/',  // ⚠️ 用户主页固定用 '/'
+  base: '/', 
   plugins: [vue(), mode === 'development' && vueDevTools()].filter(Boolean),
 }))
