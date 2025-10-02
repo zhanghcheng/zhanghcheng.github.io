@@ -6,10 +6,7 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [
-    vue(),
-    vueDevTools(),
-  ],
+  plugins: [ vue(), mode==='development' && vueDevTools() ].filter(Boolean),
   base: '/', // page
   resolve: {
     alias: {
