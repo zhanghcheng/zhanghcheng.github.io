@@ -5,7 +5,7 @@ const props = defineProps({
   item: { type: Object, required: true }
 })
 
-// 防御式默认值，避免 undefined 访问
+
 const firstLink = computed(() => props.item?.links?.[0] || null)
 const badges = computed(() => props.item?.badges ?? [])
 const links  = computed(() => props.item?.links  ?? [])
