@@ -1,8 +1,7 @@
 name: Deploy Vite to GitHub Pages (master)
 
 on:
-  push:
-    branches: [ master ] # deploy
+  push: { branches: [ master ] }
   workflow_dispatch:
 
 permissions:
@@ -19,13 +18,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: npm
+        with: { node-version: 20, cache: npm }
 
-      # 没有 package-lock.json 时，npm ci 会失败；这里做了兼容
+      # 兼容无 package-lock.json 的仓库
       - name: Install dependencies
         run: |
           if [ -f package-lock.json ]; then
@@ -37,7 +33,6 @@ jobs:
       - name: Build
         run: npm run build
 
-      # 可视化确认 dist 是否产出，方便排错
       - name: Verify dist
         run: |
           ls -la
@@ -45,8 +40,7 @@ jobs:
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
-        with:
-          path: dist
+        with: { path: dist }
 
   deploy:
     needs: build
