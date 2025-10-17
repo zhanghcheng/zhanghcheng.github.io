@@ -1,6 +1,6 @@
 export const profile = {
     name: '程章昊',
-    title: 'Undergraduate @ Nanjing Agricultural University · AI / Graduate @ SouthEast University · Computer Science',
+    title: 'Undergraduate @ Nanjing Agricultural University · AI / Graduate @ SouthEast University · Computer Tech',
     summary: '机器学习方向，做过病害分级、票房预测、操作系统模拟等，关注“模型到系统”的落地。硕士阶段聚焦于大模型应用，知识图谱的融合与推理。',
     location: 'Nanjing, China',
     photo: '/images/photo.jpg', // 放到 /public/images/avatar.jpg
@@ -20,13 +20,13 @@ export const news = [
 export const publications = [
     {
         title: 'Potato Late Blight Severity Grading via Integrated Detection & Segmentation',
-        authors: 'Chenghao Cheng*, Advisor*, et al.',
+        authors: 'Peisen Yuan*, Lushuo Jiang, Zhanghao Cheng, et al.',
         venue: 'Frontiers in Plant Science (under review), 2025',
         links: [
             { text: 'Paper', href: 'https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2025.1616864' },
             // { text: 'Code', href: '#' }
         ],
-        badges: ['YOLOv8', 'UNet3+', 'MSLRA Attention'],
+        badges: ['YOLOv8', 'UNet3+', 'LightWeight', 'MSLRA Attention'],
         thumb: '/images/potato.png',
         desc: '叶片检测 + 病斑分割 + 严重度计算一体化；在参数下降的同时，精确率+6%、召回率+3%。'
     }
